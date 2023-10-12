@@ -2,9 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
 :root {
   --foreground-rgb: 255, 255, 255;
   --background-rgb: 0, 0, 0;
+  font-family: 'Oswald', sans-serif;
   /* --background-rgb: 214, 219, 220; */
 }
 
@@ -15,17 +18,20 @@ body {
 
 h1 {
   font-weight: 700;
-  font-size: 1.75em;
+  /* font-size: 1.75em; */
+  font-size: clamp(1.25rem, 1.068rem + 0.91vw, 1.75rem);
 }
 
 h2 {
   font-weight: 500;
-  font-size: 1.25rem;
+  /* font-size: 1.25rem; */
+  font-size: clamp(1rem, 0.909rem + 0.45vw, 1.25rem); /*320-1200*/
   line-height: 2rem;
 }
 
 p {
-  font-size: 0.875rem;
+  /* font-size: 0.875rem; */
+  font-size: clamp(0.75rem, 0.705rem + 0.23vw, 0.875rem);
   line-height: 1.25rem;
   letter-spacing: 0.05em;
   line-height: 1.75rem;
