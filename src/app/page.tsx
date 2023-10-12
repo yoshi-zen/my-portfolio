@@ -4,7 +4,7 @@ import Image from 'next/image';
 import TopImage from '@/images/top-hero.jpg';
 import MyPortrait from '@/images/my-picture.jpg';
 import { TwelveColumnContainer, TwelveColumnContainerCenter, TwelveColumnContainerLeft } from '@/components/twelve-column-container';
-import { FaGlobeAfrica, FaMailBulk, FaPencilAlt, FaSchool } from 'react-icons/fa';
+import { FaGlobeAfrica, FaMailBulk, FaPencilAlt, FaSchool, FaLaptop } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { useRouter } from 'next/navigation';
 import Header from '@/components/header';
@@ -61,6 +61,10 @@ export default function Home() {
         </TwelveColumnContainerCenter>
         <div className='h-full bg-gray-700 p-5 rounded-md shadow-lg col-span-full'>
           <h1 className='text-2xl ml-6 before:block before:absolute before:bg-red-800 before:w-1 before:h-8 before:-ml-5'>Project</h1>
+          <div className='pt-4 flex flex-row items-center gap-3 '>
+            <FaLaptop />
+            <h2>Techsphere Blog</h2>
+          </div>
         </div>
       </TwelveColumnContainer>
     </main>
