@@ -12,3 +12,21 @@ body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
 }
+
+h1 {
+  font-weight: 700;
+  font-size: 1.75em;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
+
+p {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  letter-spacing: 0.05em;
+  line-height: 1.75rem;
+}

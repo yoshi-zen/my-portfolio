@@ -12,9 +12,9 @@ export const TwelveColumnContainer = ({ children, margin }: TwelveColumnContaine
 };
 
 export const TwelveColumnContainerLeft = ({ children }: TwelveColumnContainerChildProps) => {
-  return <div className='col-span-5 sm:col-span-full md:col-span-4'>{children}</div>;
+  return <div className='h-full col-span-5 sm:col-span-full md:col-span-4'>{children}</div>;
 };
 
 export const TwelveColumnContainerCenter = ({ children }: TwelveColumnContainerChildProps) => {
-  return <div className='col-start-6 col-end-13 sm:col-span-full md:col-start-5'>{children}</div>;
+  return <div className='h-full col-start-6 col-end-13 sm:col-span-full md:col-start-5'>{children}</div>;
 };
