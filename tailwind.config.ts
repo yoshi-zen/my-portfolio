@@ -26,6 +26,6 @@ const config: Config = {
       // => @media (max-width: 639px) { ... }
     },
   },
-  plugins: [],
+  plugins: [require('tailwind-clip-path')],
 };
 export default config;

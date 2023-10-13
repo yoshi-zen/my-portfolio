@@ -8,7 +8,7 @@ type TwelveColumnContainerChildProps = {
 };
 
 export const TwelveColumnContainer = ({ children, margin }: TwelveColumnContainerProps) => {
-  return <div className={`grid grid-cols-12 w-11/12 max-w-7xl ${margin} mx-auto gap-x-2 gap-y-10 sm:grid-cols-4 md:grid-cols-8`}>{children}</div>;
+  return <div className={`grid grid-cols-12 w-11/12 max-w-7xl ${margin} mx-auto gap-x-10 gap-y-8 sm:grid-cols-4 md:grid-cols-8`}>{children}</div>;
 };
 
 export const TwelveColumnContainerLeft = ({ children }: TwelveColumnContainerChildProps) => {
