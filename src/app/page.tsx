@@ -120,9 +120,7 @@ export default function Home() {
           </div>
         </TwelveColumnContainerCenter>
         <h1 className='col-span-full text-2xl ml-6 before:block before:absolute before:bg-red-800 before:w-1 before:h-8 before:-ml-5'>Project</h1>
-        <div className='col-span-4 sm:col-span-2 items-center cursor-pointer'>
-          {/* <span onClick={() => router.push('https://tech-sphere.vercel.app/')}> */}
-
+        <div className='col-span-6 sm:col-span-2 md:col-span-4 items-center cursor-pointer'>
           <AccordionItem
             image={<Image src={TechSphere} alt='techsphere' />}
             overView={
