@@ -26,14 +26,14 @@ const config: Config = {
       // => @media (max-width: 639px) { ... }
     },
     animation: {
-      'slide-out-right-early': 'slide-out-right 3.6s ease forwards',
-      'slide-out-right': 'slide-out-right 4s ease forwards',
-      'slide-out-right-delay': 'slide-out-right 4.4s ease forwards',
-      'slide-out-right-so-delay': 'slide-out-right 4.8s ease forwards',
-      'fade-in-out': 'fade-in-out 4s ease forwards',
-      'fade-in': 'fade-in 1s ease forwards',
-      shrink: 'shrink 0.3s ease 4.5s forwards',
-      'move-to-right': 'move-to-right 0.7s ease 4s forwards',
+      'slide-out-right-early': 'slide-out-right 1.8s ease forwards',
+      'slide-out-right': 'slide-out-right 2s ease forwards',
+      'slide-out-right-delay': 'slide-out-right 2.2s ease forwards',
+      'slide-out-right-so-delay': 'slide-out-right 2.4s ease forwards',
+      'fade-in-out': 'fade-in-out 2s ease forwards',
+      'fade-in': 'fade-in 0.3s ease forwards',
+      shrink: 'shrink 0.3s ease 2.2s forwards',
+      'move-to-right': 'move-to-right 0.4s ease 4s forwards',
     },
     keyframes: {
       'slide-out-right': {

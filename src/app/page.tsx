@@ -1,30 +1,43 @@
 'use client';
 
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import TopImage from '@/images/top-hero.jpg';
 import TechSphere from '@/images/techsphere01.png';
 import MyPortrait from '@/images/my-picture.jpg';
 import { TwelveColumnContainer, TwelveColumnContainerCenter, TwelveColumnContainerLeft } from '@/components/twelve-column-container';
-import { FaGlobeAfrica, FaMailBulk, FaPencilAlt, FaSchool, FaLaptop, FaHammer } from 'react-icons/fa';
+import { FaGlobeAfrica, FaMailBulk, FaPencilAlt, FaSchool, FaLaptop, FaHammer, FaHtml5, FaCss3, FaJs } from 'react-icons/fa';
+import { SiNextdotjs } from 'react-icons/si';
 import { FaXTwitter } from 'react-icons/fa6';
 import { useRouter } from 'next/navigation';
 import Header from '@/components/header';
 
 export default function Home() {
   const router = useRouter();
+  const [isFirstAccess, setIsFirstAccess] = useState(true);
+
+  useEffect(() => {
+    const data = sessionStorage.getItem('first accessed');
+    if (data === 'true') setIsFirstAccess(false);
+    sessionStorage.setItem('first accessed', 'true');
+  }, []);
+
   return (
     <main>
       <Header />
-      <div className='absolute text-2xl px-5 py-5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[60] bg-orange-600 animate-fade-in-out'>
-        <span className='animate-fade-in-out'>Welcome To My Portfolio...</span>
-      </div>
-      <span className='fixed inset-l-[-100%] inset-r-[100%] w-full h-1/3 top-0 z-50 bg-black animate-slide-out-right' />
-      <span className='fixed inset-l-[-100%] inset-r-[100%] w-full h-1/3 top-1/3 z-50 bg-black animate-slide-out-right-early' />
-      <span className='fixed inset-l-[-100%] inset-r-[100%] w-full h-1/3 top-2/3 z-50 bg-black animate-slide-out-right-delay' />
-      <span className='fixed inset-l-[-100%] inset-r-[100%] w-full h-1/6 top-1/4 z-50 bg-black animate-slide-out-right' />
-      <span className='fixed inset-l-[-100%] inset-r-[100%] w-full h-1/6 top-[20%] z-50 bg-black animate-slide-out-right-delay' />
-      <span className='fixed inset-l-[-100%] inset-r-[100%] w-full h-1/6 top-2/3 z-50 bg-black animate-slide-out-right-so-delay' />
-
+      {isFirstAccess && (
+        <>
+          <div className='absolute text-2xl px-5 py-5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[60] bg-orange-600 animate-fade-in-out'>
+            <span className='animate-fade-in-out'>Welcome To My Portfolio...</span>
+          </div>
+          <span className='fixed inset-l-[-100%] inset-r-[100%] w-full h-1/3 top-0 z-50 bg-black animate-slide-out-right' />
+          <span className='fixed inset-l-[-100%] inset-r-[100%] w-full h-1/3 top-1/3 z-50 bg-black animate-slide-out-right-early' />
+          <span className='fixed inset-l-[-100%] inset-r-[100%] w-full h-1/3 top-2/3 z-50 bg-black animate-slide-out-right-delay' />
+          <span className='fixed inset-l-[-100%] inset-r-[100%] w-full h-1/6 top-1/4 z-50 bg-black animate-slide-out-right' />
+          <span className='fixed inset-l-[-100%] inset-r-[100%] w-full h-1/6 top-[20%] z-50 bg-black animate-slide-out-right-delay' />
+          <span className='fixed inset-l-[-100%] inset-r-[100%] w-full h-1/6 top-2/3 z-50 bg-black animate-slide-out-right-so-delay' />
+        </>
+      )}
       <div className='relative w-full'>
         <Image src={TopImage} alt='picture for my toppage' />
         <div className='absolute top-[51%] left-0 w-full h-1/2 bg-gradient-to-b from-transparent to-black' />
@@ -70,12 +83,34 @@ export default function Home() {
               <h2>Studying</h2>
             </div>
             <p>現在は、Typescript、Tailwind CSSを中心に学習しているほか、スマートフォンアプリ開発のためFlutterとReact Nativeも並行して学習しています。</p>
+            <div className='pt-5 flex flex-row text-sm items-center gap-3 '>
+              <FaHammer />
+              <h2>What I can</h2>
+            </div>
+            <div className='flex flex-row gap-4 items-center pt-2'>
+              <span className='flex flex-col items-center'>
+                <FaHtml5 />
+                <p>HTML</p>
+              </span>
+              <span className='flex flex-col items-center'>
+                <FaCss3 />
+                <p>CSS</p>
+              </span>
+              <span className='flex flex-col items-center'>
+                <FaJs />
+                <p>JavaScript</p>
+              </span>
+              <span className='flex flex-col items-center'>
+                <SiNextdotjs />
+                <p>Next.js</p>
+              </span>
+            </div>
           </div>
         </TwelveColumnContainerCenter>
         <h1 className='col-span-full text-2xl ml-6 before:block before:absolute before:bg-red-800 before:w-1 before:h-8 before:-ml-5'>Project</h1>
-        <div className='col-span-4 sm:col-span-2'>
+        <div className='col-span-4 sm:col-span-2 items-center' onClick={() => router.push('https://tech-sphere.vercel.app/')}>
           <Image src={TechSphere} alt='techsphere' />
-          <div className='flex flex-row gap-3 items-center'>
+          <div className='flex flex-row gap-3 items-center justify-center'>
             <FaLaptop />
             <h2>TechSphere Blog</h2>
           </div>
