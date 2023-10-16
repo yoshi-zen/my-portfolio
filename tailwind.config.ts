@@ -34,6 +34,7 @@ const config: Config = {
       'fade-in': 'fade-in 0.3s ease forwards',
       shrink: 'shrink 0.3s ease 2.2s forwards',
       'move-to-right': 'move-to-right 0.4s ease 4s forwards',
+      spin: 'spin 1s linear infinite',
     },
     keyframes: {
       'slide-out-right': {
@@ -44,6 +45,11 @@ const config: Config = {
         '100%': {
           transform: 'translateX(100vw)',
           opacity: '0.9',
+        },
+      },
+      spin: {
+        '100%': {
+          transform: 'rotate(360deg)',
         },
       },
       'fade-in-out': {

@@ -7,8 +7,8 @@ const Header = () => {
         <h1>Portfolio Page</h1>
       </div>
       <div className='flex flex-row gap-5'>
-        <Link href='/works'>My Works</Link>
-        <p>Profile</p>
+        {/* <Link href='/works'>My Works</Link>
+        <p>Profile</p> */}
       </div>
     </header>
   );

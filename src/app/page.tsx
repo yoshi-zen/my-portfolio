@@ -6,11 +6,14 @@ import TopImage from '@/images/top-hero.jpg';
 import TechSphere from '@/images/techsphere01.png';
 import MyPortrait from '@/images/my-picture.jpg';
 import { TwelveColumnContainer, TwelveColumnContainerCenter, TwelveColumnContainerLeft } from '@/components/twelve-column-container';
-import { FaGlobeAfrica, FaMailBulk, FaPencilAlt, FaSchool, FaLaptop, FaHammer, FaHtml5, FaCss3, FaJs } from 'react-icons/fa';
-import { SiNextdotjs } from 'react-icons/si';
+import { FaGlobeAfrica, FaMailBulk, FaPencilAlt, FaSchool, FaLaptop, FaHammer, FaHtml5, FaCss3, FaJs, FaCamera, FaChevronCircleDown, FaLink } from 'react-icons/fa';
+import { SiFigma, SiGithub, SiNextdotjs, SiReact, SiSupabase, SiTypescript, SiVercel, SiVisualstudiocode } from 'react-icons/si';
 import { FaXTwitter } from 'react-icons/fa6';
 import { useRouter } from 'next/navigation';
 import Header from '@/components/header';
+import AccordionItem from '@/components/accordion-wrapper';
+import TechWrapper from '@/components/tech-wrapper';
+import Link from 'next/link';
 
 export default function Home() {
   const router = useRouter();
@@ -49,10 +52,14 @@ export default function Home() {
               <Image src={MyPortrait} alt='my portrait' className='rounded-xl w-full p-1' />
               <div className='absolute right-4 top-4 text-red-900 text-end bg-slate-50/80 rounded-md p-2'>
                 <h2>Yoshihito Saito</h2>
-                <p>Waseda University</p>
+                <p>Waseda Univ.</p>
               </div>
             </div>
-            <div className='flex flex-col pt-4 gap-3 sm:gap-0.5'>
+            <div className='flex flex-col pt-4 gap-2 sm:gap-0.5'>
+              <div className='flex flex-row text-sm items-center gap-3'>
+                <FaSchool />
+                <p>早稲田大学 基幹理工学部 情報理工学科 2年</p>
+              </div>
               <div className='flex flex-row text-sm items-center gap-3 group'>
                 <span className='group-hover:animate-spin'>
                   <FaGlobeAfrica />
@@ -66,6 +73,10 @@ export default function Home() {
               <div className='flex flex-row text-sm items-center gap-3 cursor-pointer' onClick={() => router.push('https://twitter.com/yor48614')}>
                 <FaXTwitter />
                 <p>@yor48614</p>
+              </div>
+              <div className='flex flex-row text-sm items-center gap-3'>
+                <FaCamera />
+                <p>開発・写真撮影</p>
               </div>
             </div>
           </div>
@@ -87,34 +98,82 @@ export default function Home() {
               <FaHammer />
               <h2>What I can</h2>
             </div>
-            <div className='flex flex-row gap-4 items-center pt-2'>
-              <span className='flex flex-col items-center'>
-                <FaHtml5 />
-                <p>HTML</p>
-              </span>
-              <span className='flex flex-col items-center'>
-                <FaCss3 />
-                <p>CSS</p>
-              </span>
-              <span className='flex flex-col items-center'>
-                <FaJs />
-                <p>JavaScript</p>
-              </span>
-              <span className='flex flex-col items-center'>
-                <SiNextdotjs />
-                <p>Next.js</p>
-              </span>
+            <p className=' border-b-2 border-solid leading-5'>FrontEnd</p>
+            <div className='flex flex-row gap-4 items-center py-2 overflow-scroll hidden-scrollbar'>
+              <TechWrapper iconName={<FaHtml5 />} name='HTML' />
+              <TechWrapper iconName={<FaCss3 />} name='CSS' />
+              <TechWrapper iconName={<FaJs />} name='JavaScript' />
+              <TechWrapper iconName={<SiTypescript />} name='TypeScript' />
+              <TechWrapper iconName={<SiReact />} name='React' />
+              <TechWrapper iconName={<SiNextdotjs />} name='Next.js' />
+            </div>
+            <p className=' border-b-2 border-solid leading-5'>Backend</p>
+            <div className='flex flex-row gap-4 items-center py-2'>
+              <TechWrapper iconName={<SiSupabase />} name='Supabase' />
+            </div>
+            <p className=' border-b-2 border-solid leading-5'>Tools</p>
+            <div className='flex flex-row gap-4 items-center py-2'>
+              <TechWrapper iconName={<SiGithub />} name='Github' />
+              <TechWrapper iconName={<SiFigma />} name='Figma' />
+              <TechWrapper iconName={<SiVisualstudiocode />} name='VSCode' />
             </div>
           </div>
         </TwelveColumnContainerCenter>
         <h1 className='col-span-full text-2xl ml-6 before:block before:absolute before:bg-red-800 before:w-1 before:h-8 before:-ml-5'>Project</h1>
-        <div className='col-span-4 sm:col-span-2 items-center' onClick={() => router.push('https://tech-sphere.vercel.app/')}>
-          <Image src={TechSphere} alt='techsphere' />
-          <div className='flex flex-row gap-3 items-center justify-center'>
-            <FaLaptop />
-            <h2>TechSphere Blog</h2>
-          </div>
-          <p></p>
+        <div className='col-span-4 sm:col-span-2 items-center cursor-pointer'>
+          {/* <span onClick={() => router.push('https://tech-sphere.vercel.app/')}> */}
+
+          <AccordionItem
+            image={<Image src={TechSphere} alt='techsphere' />}
+            overView={
+              <span>
+                <div className='flex flex-row gap-3 items-center justify-center pt-1'>
+                  <FaLaptop />
+                  <h2>TechSphere Blog</h2>
+                </div>
+              </span>
+            }
+          >
+            <span className='flex flex-row items-center gap-2 border-b-2 border-solid my-2'>
+              <FaHammer />
+              <p className=' leading-5 '>使用技術</p>
+            </span>
+            <div className='grid grid-cols-3'>
+              <TechWrapper iconName={<FaHtml5 size='0.8rem' />} name='HTML' />
+              <TechWrapper iconName={<FaCss3 size='0.8rem' />} name='CSS' />
+              <TechWrapper iconName={<FaJs size='0.8rem' />} name='JavaScript' />
+              <TechWrapper iconName={<SiNextdotjs size='0.8rem' />} name='Next.js' />
+              <TechWrapper iconName={<SiVercel size='0.8rem' />} name='Vercel' />
+              <TechWrapper iconName={<SiSupabase size='0.8rem' />} name='Supabase' />
+            </div>
+            <span className='flex flex-row items-center gap-2 border-b-2 border-solid mt-3 mb-1'>
+              <FaHammer />
+              <p className='leading-5'>人数</p>
+            </span>
+            <p className='leading-4'>1名</p>
+            <span className='flex flex-row items-center gap-2 border-b-2 border-solid mt-3 mb-1'>
+              <FaHammer />
+              <p className='leading-5'>開発期間</p>
+            </span>
+            <p className='leading-4'>2023/2 -</p>
+            <span className='flex flex-row items-center gap-2 border-b-2 border-solid mt-3 mb-1'>
+              <FaHammer />
+              <p className='leading-5'>説明</p>
+            </span>
+            <p className='leading-5'>このWebサイトは、自分がWeb開発を始めた原点です。理系の友人たちをライターとして招待し、その記事を掲載しています。現在はUIをより改善できるよう日々更新を続けています。</p>
+            <span className='flex flex-row items-center gap-2 border-b-2 border-solid mt-3 mb-1'>
+              <FaHammer />
+              <p className='leading-5'>外部リンク</p>
+            </span>
+            <span className='flex flex-row items-center gap-2 bg-white text-black justify-center rounded-sm' onClick={() => router.push('https://tech-sphere.vercel.app/')}>
+              <FaLink />
+              <p className='leading-7'>Webサイトへ</p>
+            </span>
+          </AccordionItem>
+        </div>
+        <div className='p-2 h-[50px] col-span-4 sm:col-span-2 items-center bg-slate-500'>
+          <div className=''></div>
+          <p>coming soon...</p>
         </div>
       </TwelveColumnContainer>
     </main>
