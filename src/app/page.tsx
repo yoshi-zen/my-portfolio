@@ -14,6 +14,7 @@ import Header from '@/components/header';
 import AccordionItem from '@/components/accordion-wrapper';
 import TechWrapper from '@/components/tech-wrapper';
 import Link from 'next/link';
+import HeadingWithIcon from '@/components/heading-with-icon';
 
 export default function Home() {
   const router = useRouter();
@@ -84,11 +85,8 @@ export default function Home() {
         <TwelveColumnContainerCenter>
           <div className='h-full p-5 rounded-md shadow-[rgba(255,_255,_255,_0.2)_0px_0px_10px]'>
             <h1 className='text-2xl ml-6 before:block before:absolute before:bg-red-800 before:w-1 before:h-8 before:-ml-5'>About Me</h1>
-            <div className='pt-5 flex flex-row text-sm items-center gap-3 '>
-              <FaPencilAlt />
-              <h2>My Profile</h2>
-            </div>
-            <p>今年2月より、冬休み期間から独学でNext.jsの学習を始めました。そこからHTMLやCSSの基礎知識をはじめ、HooksやHeadless CMSの活用、データベースを用いた認証機能までを一通り学び、自サイトで実装しました。現在はスマートフォンアプリの開発も学友と行っており、今後さらに視野を広げて多岐にわたる学識を身に着けたいと考えています。</p>
+            <HeadingWithIcon icon={<FaPencilAlt />} heading='My Profile' />
+            <p>2023年2月の冬休み期間から独学でNext.jsの学習を始めました。そこからHTMLやCSSの基礎知識をはじめ、React HooksやHeadless CMSの活用、データベースを用いた認証機能までを一通り学び、自サイトで実装しました。現在はスマートフォンアプリの開発も学友と行っており、今後さらに視野を広げて多岐にわたる学識を身に着けたいと考えています。</p>
             <div className='pt-4 flex flex-row items-center gap-3 '>
               <FaSchool />
               <h2>Studying</h2>
