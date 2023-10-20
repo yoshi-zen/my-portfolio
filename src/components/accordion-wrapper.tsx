@@ -14,8 +14,8 @@ export default function AccordionItem({ children, overView, image }: AccordionIt
   const onClickActionToggle = () => {
     if (childElement.current) {
       const childHeight = childElement.current?.clientHeight; // 高さ取得
-      setContentHeight(childHeight); // 高さをセット
-      setIsOpen(!isOpen); // 開閉フラグを反転
+      setContentHeight(childHeight);
+      setIsOpen(!isOpen);
     }
   };
 
