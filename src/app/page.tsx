@@ -6,14 +6,13 @@ import TopImage from '@/images/top-hero.jpg';
 import TechSphere from '@/images/techsphere01.png';
 import MyPortrait from '@/images/my-picture.jpg';
 import { TwelveColumnContainer, TwelveColumnContainerCenter, TwelveColumnContainerLeft } from '@/components/twelve-column-container';
-import { FaGlobeAfrica, FaMailBulk, FaPencilAlt, FaSchool, FaLaptop, FaHammer, FaHtml5, FaCss3, FaJs, FaCamera, FaChevronCircleDown, FaLink } from 'react-icons/fa';
-import { SiFigma, SiGithub, SiNextdotjs, SiReact, SiSupabase, SiTypescript, SiVercel, SiVisualstudiocode } from 'react-icons/si';
+import { FaGlobeAfrica, FaMailBulk, FaPencilAlt, FaSchool, FaLaptop, FaHammer, FaCamera, FaLink } from 'react-icons/fa';
+import { SiC, SiCss3, SiFigma, SiFortran, SiGithub, SiHtml5, SiJavascript, SiLatex, SiNextdotjs, SiReact, SiSupabase, SiTypescript, SiVercel, SiVisualstudiocode } from 'react-icons/si';
 import { FaXTwitter } from 'react-icons/fa6';
 import { useRouter } from 'next/navigation';
 import Header from '@/components/header';
 import AccordionItem from '@/components/accordion-wrapper';
 import TechWrapper from '@/components/tech-wrapper';
-import Link from 'next/link';
 import HeadingWithIcon from '@/components/heading-with-icon';
 
 export default function Home() {
@@ -98,9 +97,9 @@ export default function Home() {
             </div>
             <p className=' border-b-2 border-solid leading-5'>FrontEnd</p>
             <div className='flex flex-row gap-4 items-center py-2 overflow-scroll hidden-scrollbar'>
-              <TechWrapper iconName={<FaHtml5 />} name='HTML' />
-              <TechWrapper iconName={<FaCss3 />} name='CSS' />
-              <TechWrapper iconName={<FaJs />} name='JavaScript' />
+              <TechWrapper iconName={<SiHtml5 />} name='HTML' />
+              <TechWrapper iconName={<SiCss3 />} name='CSS' />
+              <TechWrapper iconName={<SiJavascript />} name='JavaScript' />
               <TechWrapper iconName={<SiTypescript />} name='TypeScript' />
               <TechWrapper iconName={<SiReact />} name='React' />
               <TechWrapper iconName={<SiNextdotjs />} name='Next.js' />
@@ -108,6 +107,12 @@ export default function Home() {
             <p className=' border-b-2 border-solid leading-5'>Backend</p>
             <div className='flex flex-row gap-4 items-center py-2'>
               <TechWrapper iconName={<SiSupabase />} name='Supabase' />
+            </div>
+            <p className=' border-b-2 border-solid leading-5'>Others</p>
+            <div className='flex flex-row gap-4 items-center py-2'>
+              <TechWrapper iconName={<SiC />} name='C' />
+              <TechWrapper iconName={<SiFortran />} name='Fortran' />
+              <TechWrapper iconName={<SiLatex />} name='LaTeX' />
             </div>
             <p className=' border-b-2 border-solid leading-5'>Tools</p>
             <div className='flex flex-row gap-4 items-center py-2'>
@@ -135,9 +140,9 @@ export default function Home() {
               <p className=' leading-5 '>使用技術</p>
             </span>
             <div className='grid grid-cols-3'>
-              <TechWrapper iconName={<FaHtml5 size='0.8rem' />} name='HTML' />
-              <TechWrapper iconName={<FaCss3 size='0.8rem' />} name='CSS' />
-              <TechWrapper iconName={<FaJs size='0.8rem' />} name='JavaScript' />
+              <TechWrapper iconName={<SiHtml5 size='0.8rem' />} name='HTML' />
+              <TechWrapper iconName={<SiCss3 size='0.8rem' />} name='CSS' />
+              <TechWrapper iconName={<SiJavascript size='0.8rem' />} name='JavaScript' />
               <TechWrapper iconName={<SiNextdotjs size='0.8rem' />} name='Next.js' />
               <TechWrapper iconName={<SiVercel size='0.8rem' />} name='Vercel' />
               <TechWrapper iconName={<SiSupabase size='0.8rem' />} name='Supabase' />
