@@ -11,9 +11,10 @@ import { SiC, SiCss3, SiFigma, SiFortran, SiGithub, SiHtml5, SiJavascript, SiLat
 import { FaXTwitter } from 'react-icons/fa6';
 import { useRouter } from 'next/navigation';
 import Header from '@/components/header';
-import AccordionItem from '@/components/accordion-wrapper';
-import TechWrapper from '@/components/tech-wrapper';
-import HeadingWithIcon from '@/components/heading-with-icon';
+import AccordionItem from '@/components/wrapper-accordion';
+import TechWrapper from '@/components/inner-tech-name';
+import HeadingWithIcon from '@/components/wrapper-heading-with-icon';
+import ContainerTechName from '@/components/container-tech-name';
 
 export default function Home() {
   const router = useRouter();
@@ -89,31 +90,27 @@ export default function Home() {
             <HeadingWithIcon icon={<FaSchool />} heading='Studying' />
             <p>現在は、Typescript、Tailwind CSSを中心に学習しているほか、スマートフォンアプリ開発のためFlutterとReact Nativeも並行して学習しています。</p>
             <HeadingWithIcon icon={<FaHammer />} heading='What I can' />
-            <p className=' border-b-2 border-solid leading-5'>FrontEnd</p>
-            <div className='flex flex-row gap-4 items-center py-2 overflow-scroll hidden-scrollbar'>
+            <ContainerTechName title='Frontend'>
               <TechWrapper iconName={<SiHtml5 />} name='HTML' />
               <TechWrapper iconName={<SiCss3 />} name='CSS' />
               <TechWrapper iconName={<SiJavascript />} name='JavaScript' />
               <TechWrapper iconName={<SiTypescript />} name='TypeScript' />
               <TechWrapper iconName={<SiReact />} name='React' />
               <TechWrapper iconName={<SiNextdotjs />} name='Next.js' />
-            </div>
-            <p className=' border-b-2 border-solid leading-5'>Backend</p>
-            <div className='flex flex-row gap-4 items-center py-2'>
+            </ContainerTechName>
+            <ContainerTechName title='Backend'>
               <TechWrapper iconName={<SiSupabase />} name='Supabase' />
-            </div>
-            <p className=' border-b-2 border-solid leading-5'>Others</p>
-            <div className='flex flex-row gap-4 items-center py-2'>
+            </ContainerTechName>
+            <ContainerTechName title='Others'>
               <TechWrapper iconName={<SiC />} name='C' />
               <TechWrapper iconName={<SiFortran />} name='Fortran' />
               <TechWrapper iconName={<SiLatex />} name='LaTeX' />
-            </div>
-            <p className=' border-b-2 border-solid leading-5'>Tools</p>
-            <div className='flex flex-row gap-4 items-center py-2'>
+            </ContainerTechName>
+            <ContainerTechName title='Tools'>
               <TechWrapper iconName={<SiGithub />} name='Github' />
               <TechWrapper iconName={<SiFigma />} name='Figma' />
               <TechWrapper iconName={<SiVisualstudiocode />} name='VSCode' />
-            </div>
+            </ContainerTechName>
           </div>
         </TwelveColumnContainerCenter>
         <h1 className='col-span-full text-2xl ml-6 before:block before:absolute before:bg-red-800 before:w-1 before:h-8 before:-ml-5'>Project</h1>
@@ -166,7 +163,7 @@ export default function Home() {
             </span>
           </AccordionItem>
         </div>
-        <div className='p-2 h-[50px] col-span-4 sm:col-span-2 items-center bg-slate-500'>
+        <div className='p-2 h-[50px] col-span-6 sm:col-span-2 md:col-span-4 items-center bg-slate-500'>
           <div className=''></div>
           <p>coming soon...</p>
         </div>
