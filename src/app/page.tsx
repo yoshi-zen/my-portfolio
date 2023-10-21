@@ -5,7 +5,7 @@ import Image from 'next/image';
 import TopImage from '@/images/top-hero.jpg';
 import TechSphere from '@/images/techsphere01.png';
 import MyPortrait from '@/images/my-picture.jpg';
-import { TwelveColumnContainer, TwelveColumnContainerCenter, TwelveColumnContainerLeft } from '@/components/twelve-column-container';
+import { TwelveColumnContainer, TwelveColumnContainerCenter, TwelveColumnContainerLeft } from '@/components/layout-twelve-column';
 import { FaGlobeAfrica, FaMailBulk, FaPencilAlt, FaSchool, FaLaptop, FaHammer, FaCamera, FaLink } from 'react-icons/fa';
 import { SiC, SiCss3, SiFigma, SiFortran, SiGithub, SiHtml5, SiJavascript, SiLatex, SiNextdotjs, SiReact, SiSupabase, SiTypescript, SiVercel, SiVisualstudiocode } from 'react-icons/si';
 import { FaXTwitter } from 'react-icons/fa6';
@@ -86,15 +86,9 @@ export default function Home() {
             <h1 className='text-2xl ml-6 before:block before:absolute before:bg-red-800 before:w-1 before:h-8 before:-ml-5'>About Me</h1>
             <HeadingWithIcon icon={<FaPencilAlt />} heading='My Profile' />
             <p>2023年2月の冬休み期間から独学でNext.jsの学習を始めました。そこからHTMLやCSSの基礎知識をはじめ、React HooksやHeadless CMSの活用、データベースを用いた認証機能までを一通り学び、自サイトで実装しました。現在はスマートフォンアプリの開発も学友と行っており、今後さらに視野を広げて多岐にわたる学識を身に着けたいと考えています。</p>
-            <div className='pt-4 flex flex-row items-center gap-3 '>
-              <FaSchool />
-              <h2>Studying</h2>
-            </div>
+            <HeadingWithIcon icon={<FaSchool />} heading='Studying' />
             <p>現在は、Typescript、Tailwind CSSを中心に学習しているほか、スマートフォンアプリ開発のためFlutterとReact Nativeも並行して学習しています。</p>
-            <div className='pt-5 flex flex-row text-sm items-center gap-3 '>
-              <FaHammer />
-              <h2>What I can</h2>
-            </div>
+            <HeadingWithIcon icon={<FaHammer />} heading='What I can' />
             <p className=' border-b-2 border-solid leading-5'>FrontEnd</p>
             <div className='flex flex-row gap-4 items-center py-2 overflow-scroll hidden-scrollbar'>
               <TechWrapper iconName={<SiHtml5 />} name='HTML' />
