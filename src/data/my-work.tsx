@@ -88,7 +88,7 @@ export const myWork: Props[] = [
     peers: 1,
     startDate: '2023/12',
     description:
-      '写真家、樋浦結人さんのポートフォリオサイトを制作しました。デザインはFigmaで行い、そのデザインを元にコーディングを行いました。',
+      '学生写真家として活躍していらっしゃる、樋浦結人さんのポートフォリオサイトを制作しました。デザインはFigmaで行い、そのデザインを元にコーディングを行いました。',
     href: 'https://yuito-hiura.vercel.app/',
   },
 ];
