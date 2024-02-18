@@ -40,10 +40,11 @@ import { FaXTwitter } from 'react-icons/fa6';
 import { useRouter } from 'next/navigation';
 import Header from '@/components/header';
 import { AccordionItem } from 'components/wrapper-accordion';
-import TechWrapper from 'components/inner-tech-name';
+import TechWrapper from '@/components/TechWrapper';
 import HeadingWithIcon from 'components/wrapper-heading-with-icon';
 import ContainerTechName from '@/components/container-tech-name';
 import HeadAnimation from '@/components/anime-container';
+import { myWork } from '@/data/my-work';
 import { ProjectCard } from '@/features/project/ProjectCard/ProjectCard';
 
 export default function Home() {
@@ -144,59 +145,53 @@ export default function Home() {
               heading='What I can'
             />
             <ContainerTechName title='Frontend'>
+              <TechWrapper Icon={<SiHtml5 />} name='HTML' />
+              <TechWrapper Icon={<SiCss3 />} name='CSS' />
               <TechWrapper
-                iconName={<SiHtml5 />}
-                name='HTML'
-              />
-              <TechWrapper
-                iconName={<SiCss3 />}
-                name='CSS'
-              />
-              <TechWrapper
-                iconName={<SiJavascript />}
+                Icon={<SiJavascript />}
                 name='JavaScript'
               />
               <TechWrapper
-                iconName={<SiTypescript />}
+                Icon={<SiTypescript />}
                 name='TypeScript'
               />
               <TechWrapper
-                iconName={<SiReact />}
+                Icon={<SiReact />}
                 name='React'
               />
               <TechWrapper
-                iconName={<SiNextdotjs />}
+                Icon={<SiNextdotjs />}
                 name='Next.js'
               />
             </ContainerTechName>
             <ContainerTechName title='Backend'>
               <TechWrapper
-                iconName={<SiSupabase />}
+                Icon={<SiSupabase />}
                 name='Supabase'
               />
             </ContainerTechName>
             <ContainerTechName title='Others'>
-              <TechWrapper iconName={<SiC />} name='C' />
+              <TechWrapper Icon={<SiC />} name='C' />
               <TechWrapper
-                iconName={<SiFortran />}
+                Icon={<SiFortran />}
                 name='Fortran'
               />
               <TechWrapper
-                iconName={<SiLatex />}
+                Icon={<SiLatex />}
                 name='LaTeX'
               />
             </ContainerTechName>
             <ContainerTechName title='Tools'>
               <TechWrapper
-                iconName={<SiGithub />}
+                Icon={<SiGithub />}
                 name='Github'
               />
               <TechWrapper
-                iconName={<SiFigma />}
+                Icon={<SiFigma />}
                 name='Figma'
               />
               <TechWrapper
-                iconName={<SiVisualstudiocode />}
+                Icon={<SiVisualstudiocode />}
                 name='VSCode'
               />
             </ContainerTechName>
@@ -205,87 +200,18 @@ export default function Home() {
         <h1 className='col-span-full text-2xl ml-6 before:block before:absolute before:bg-red-800 before:w-1 before:h-8 before:-ml-5'>
           Project
         </h1>
-        <div className='col-span-6 sm:col-span-2 md:col-span-4 items-center cursor-pointer'>
-          <AccordionItem
-            imgSrc='/techsphere01.png'
-            overView={
-              <span>
-                <div className='flex flex-row gap-3 items-center justify-center pt-1'>
-                  <FaLaptop />
-                  <h2>TechSphere Blog</h2>
-                </div>
-              </span>
-            }
-          >
-            <span className='flex flex-row items-center gap-2 border-b-2 border-solid my-2'>
-              <FaHammer />
-              <p className=' leading-5 '>使用技術</p>
-            </span>
-            <div className='grid grid-cols-3'>
-              <TechWrapper
-                iconName={<SiHtml5 size='0.8rem' />}
-                name='HTML'
-              />
-              <TechWrapper
-                iconName={<SiCss3 size='0.8rem' />}
-                name='CSS'
-              />
-              <TechWrapper
-                iconName={<SiJavascript size='0.8rem' />}
-                name='JavaScript'
-              />
-              <TechWrapper
-                iconName={<SiNextdotjs size='0.8rem' />}
-                name='Next.js'
-              />
-              <TechWrapper
-                iconName={<SiVercel size='0.8rem' />}
-                name='Vercel'
-              />
-              <TechWrapper
-                iconName={<SiSupabase size='0.8rem' />}
-                name='Supabase'
-              />
-            </div>
-            <span className='flex flex-row items-center gap-2 border-b-2 border-solid mt-3 mb-1'>
-              <FaHammer />
-              <p className='leading-5'>人数</p>
-            </span>
-            <p className='leading-4'>1名</p>
-            <span className='flex flex-row items-center gap-2 border-b-2 border-solid mt-3 mb-1'>
-              <FaHammer />
-              <p className='leading-5'>開発期間</p>
-            </span>
-            <p className='leading-4'>2023/2 -</p>
-            <span className='flex flex-row items-center gap-2 border-b-2 border-solid mt-3 mb-1'>
-              <FaHammer />
-              <p className='leading-5'>説明</p>
-            </span>
-            <p className='leading-5'>
-              このWebサイトは、自分がWeb開発を始めた原点です。理系の友人たちをライターとして招待し、その記事を掲載しています。現在はUIをより改善できるよう日々更新を続けています。
-            </p>
-            <span className='flex flex-row items-center gap-2 border-b-2 border-solid mt-3 mb-1'>
-              <FaHammer />
-              <p className='leading-5'>外部リンク</p>
-            </span>
-            <span
-              className='flex flex-row items-center gap-2 bg-white text-black justify-center rounded-sm'
-              onClick={() =>
-                router.push(
-                  'https://tech-sphere.vercel.app/'
-                )
-              }
-            >
-              <FaLink />
-              <p className='leading-7'>Webサイトへ</p>
-            </span>
-          </AccordionItem>
-        </div>
-        <ProjectCard
-          imgSrc='/techsphere01.png'
-          title='test'
-          href='https://tech-sphere.vercel.app/'
-        />
+        {myWork.map((work, index) => (
+          <ProjectCard
+            key={index}
+            imgSrc={work.imgSrc}
+            title={work.title}
+            href={work.href}
+            peers={work.peers}
+            startDate={work.startDate}
+            description={work.description}
+            tech={work.tech}
+          />
+        ))}
       </TwelveColumnContainer>
     </main>
   );
