@@ -5,14 +5,6 @@ import { AccordionItem } from 'components/wrapper-accordion';
 import Link from 'next/link';
 import { FC } from 'react';
 import { FaHammer, FaLaptop, FaLink } from 'react-icons/fa';
-import {
-  SiCss3,
-  SiHtml5,
-  SiJavascript,
-  SiNextdotjs,
-  SiSupabase,
-  SiVercel,
-} from 'react-icons/si';
 
 type Props = {
   imgSrc: string;
