@@ -23,6 +23,16 @@ const config: Config = {
         xxs: 'var(--font-size-xxs)',
         xxxs: 'var(--font-size-xxxs)',
       },
+      animation: {
+        myanime1:
+          'myanime1 3s ease-in 1s infinite reverse both running',
+      },
+      keyframes: {
+        myanime1: {
+          '0%': { width: '0%' },
+          '100%': { width: '100%' },
+        },
+      },
     },
     screens: {
       '2xl': { max: '1535px' },
