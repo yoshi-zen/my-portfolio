@@ -23,6 +23,7 @@ export const MyShadowMove = () => {
     );
     const renderer = new THREE.WebGLRenderer(); // divの子供に「canvasを追加」するためのレンダラー
     renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setClearColor(new THREE.Color('lightgrey'), 1);
     if (!containerRef.current)
       throw Error('containerRef is not assigned');
     containerRef.current.appendChild(renderer.domElement);
