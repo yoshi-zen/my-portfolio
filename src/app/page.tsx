@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import TopImage from '@/images/top-hero.jpg';
-import TechSphere from '@/images/techsphere01.png';
 import MyPortrait from '@/images/my-picture.jpg';
 import {
   TwelveColumnContainer,
@@ -15,10 +14,8 @@ import {
   FaMailBulk,
   FaPencilAlt,
   FaSchool,
-  FaLaptop,
   FaHammer,
   FaCamera,
-  FaLink,
 } from 'react-icons/fa';
 import {
   SiC,
