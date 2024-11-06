@@ -25,6 +25,7 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "tailwind-clip-path": "^1.0.0"
   }
 }
