@@ -1,6 +1,6 @@
 import { format } from "date-fns";
 import { getMyGrasses } from "features/top/_github/_api/getMyGrasses";
-import { GrassViewer } from "features/top/_github/_components/grass-viewer";
+import { GrassPresentation } from "features/top/_github/_components/grass-presentation";
 import { AnimateName } from "frames/animate-name";
 import { Suspense } from "react";
 
@@ -17,7 +17,7 @@ export default async function Home() {
     <Suspense fallback={<AnimateName />}>
       <main className="flex items-center justify-center">
         <AnimateName />
-        <GrassViewer grasses={grassData} />
+        <GrassPresentation grasses={grassData} />
       </main>
     </Suspense>
   );

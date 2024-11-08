@@ -2,7 +2,6 @@ import {
   GetMyGrassesDocument,
   type GetMyGrassesQuery,
 } from "graphql/generated/schema";
-import { request } from "graphql-request";
 import { getClient } from "@/lib/client";
 
 type GetMyGrassesArgs = {
