@@ -1,6 +1,6 @@
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { format, parse } from "date-fns";
 import type { GetMyGrassesQuery } from "graphql/generated/schema";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "ui/hover-card";
 
 type Props = {
   grasses: GetMyGrassesQuery;

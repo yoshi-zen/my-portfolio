@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { GrassViewer } from "features/top/_github/_components/grass-viewer";
+import { GrassViewer } from "features/top/github/_components/grass-viewer";
 import { GetMyGrassesQuery } from "graphql/generated/schema";
 import { SiGithub } from "react-icons/si";
 

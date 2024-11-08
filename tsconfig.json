@@ -21,6 +21,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "frames/*": ["./src/components/frames/*"],
+      "ui/*": ["./src/components/ui/*"],
       "features/*": ["./src/features/*"],
       "graphql/*": ["./src/graphql/*"]
     }

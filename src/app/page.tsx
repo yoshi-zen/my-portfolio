@@ -1,6 +1,7 @@
 import { format } from "date-fns";
-import { getMyGrasses } from "features/top/_github/_api/getMyGrasses";
-import { GrassPresentation } from "features/top/_github/_components/grass-presentation";
+import { getMyGrasses } from "features/top/github/_api/getMyGrasses";
+import { GrassPresentation } from "features/top/github/_components/grass-presentation";
+import { ProfilePresentation } from "features/top/profile/_components/profile-presentation";
 import { AnimateName } from "frames/animate-name";
 import { Suspense } from "react";
 
@@ -16,8 +17,9 @@ export default async function Home() {
 
   return (
     <Suspense fallback={<AnimateName />}>
-      <main className="flex items-center justify-center">
+      <main className="flex items-center justify-center gap-3">
         <AnimateName />
+        <ProfilePresentation />
         <GrassPresentation grasses={grassData} />
       </main>
     </Suspense>
