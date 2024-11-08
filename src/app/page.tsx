@@ -1,10 +1,24 @@
+import { format } from "date-fns";
+import { getMyGrasses } from "features/top/_github/_api/getMyGrasses";
+import { GrassViewer } from "features/top/_github/_components/grass-viewer";
 import { AnimateName } from "frames/animate-name";
+import { Suspense } from "react";
 
-export default function Home() {
+export default async function Home() {
+  const grassData = await getMyGrasses({
+    userId: process.env.GITHUB_USER_ID || "",
+    from: "2024-01-01T00:00:00Z",
+    to: format(new Date(), "yyyy-MM-dd'T'HH:mm:ss'Z'"),
+  });
+
+  console.log(grassData);
+
   return (
-    <main className="flex items-center justify-center bg-gray-900">
-      <AnimateName />
-      <p className="text-white">コンテンツだよ</p>
-    </main>
+    <Suspense fallback={<AnimateName />}>
+      <main className="flex items-center justify-center">
+        <AnimateName />
+        <GrassViewer grasses={grassData} />
+      </main>
+    </Suspense>
   );
 }

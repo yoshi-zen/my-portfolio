@@ -1,0 +1,14 @@
+query getMyGrasses($userId: String!, $from: DateTime!, $to: DateTime!) {
+  user(login: $userId) {
+    contributionsCollection(to: $to, from: $from) {
+      contributionCalendar {
+        weeks {
+          contributionDays {
+            date
+            contributionCount
+          }
+        }
+      }
+    }
+  }
+}

@@ -10,7 +10,7 @@ export const AnimateName = () => {
           <div className="animation-delay-2000 absolute inset-0 translate-x-[-100%] animate-appear-from-left bg-black" />
         </div>
         <div className="relative z-10">
-          <p className="text-center text-sm text-gray-500">Now Loading...</p>
+          <p className="text-center text-sm text-gray-300">Now Loading...</p>
           <div className="absolute inset-0 animate-width-scale-down bg-white" />
         </div>
         <div className="animation-delay-3000 absolute inset-0 z-20 translate-y-[-100%] animate-appear-from-top bg-white duration-500" />
