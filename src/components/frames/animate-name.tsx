@@ -1,6 +1,6 @@
 export const AnimateName = () => {
   return (
-    <div className="animation-delay-4000 fixed inset-0 flex h-[calc(100dvh)] w-screen animate-disappear-to-right items-center justify-center gap-1 bg-white">
+    <div className="animation-delay-4000 fixed inset-0 z-50 flex h-[calc(100dvh)] w-screen animate-disappear-to-right items-center justify-center gap-1 bg-white">
       <div className="relative flex flex-col items-center gap-2">
         <div className="relative">
           <h1 className="text-lg font-bold">Yoshihito Saito</h1>

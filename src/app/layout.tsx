@@ -14,16 +14,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body
-        className={twMerge(
-          inter.className,
-          "grid grid-rows-[50px_1fr_40px] h-[calc(100dvh)] w-screen"
-        )}
-      >
-        <header className="bg-yellow-50">ヘッダーだよ</header>
-        {children}
-        <footer className="bg-green-100">フッターだよ</footer>
-      </body>
+      <body className={twMerge(inter.className, "min-h-[calc(100dvh)]")}>{children}</body>
     </html>
   );
 }

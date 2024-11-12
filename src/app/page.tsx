@@ -1,13 +1,12 @@
-import { format } from "date-fns";
+import { format, subMonths } from "date-fns";
 import { getMyGrasses } from "features/top/github/_api/getMyGrasses";
-import { GrassPresentation } from "features/top/github/_components/grass-presentation";
-import { ProfilePresentation } from "features/top/profile/_components/profile-presentation";
+import { TopPresentation } from "features/top/top-presentation";
 import { AnimateName } from "frames/animate-name";
 import { Suspense } from "react";
 
 export default async function Home() {
   const today = new Date();
-  const lastYear = new Date(today.getFullYear() - 1, today.getMonth(), today.getDate());
+  const lastYear = subMonths(today, 6);
 
   const grassData = await getMyGrasses({
     userId: process.env.GITHUB_USER_ID || "",
@@ -17,11 +16,7 @@ export default async function Home() {
 
   return (
     <Suspense fallback={<AnimateName />}>
-      <main className="flex items-center justify-center gap-3">
-        <AnimateName />
-        <ProfilePresentation />
-        <GrassPresentation grasses={grassData} />
-      </main>
+      <TopPresentation grasses={grassData} />
     </Suspense>
   );
 }

@@ -1,3 +1,4 @@
+import { Hedvig_Letters_Sans } from "next/font/google";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -73,19 +74,19 @@ const config: Config = {
     screens: {
       "2xl": {
         max: "1535px",
-        min: "1279px",
+        // min: "1279px",
       },
       xl: {
         max: "1279px",
-        min: "1023px",
+        // min: "1023px",
       },
       lg: {
         max: "1023px",
-        min: "767px",
+        // min: "767px",
       },
       md: {
         max: "767px",
-        min: "639px",
+        // min: "639px",
       },
       sm: {
         max: "639px",
@@ -95,6 +96,7 @@ const config: Config = {
       "from-right-to-center": "from-right-to-center 0.9s ease-in-out forwards",
       "width-scale-up": "width-scale-up 0.6s ease-in-out forwards",
       "width-scale-down": "width-scale-down 0.6s ease-in-out forwards",
+      "height-scale-up": "height-scale-up 0.6s ease-in-out forwards",
       "appear-from-top": "appear-from-top 0.6s ease-in-out forwards",
       "appear-from-left": "appear-from-left 0.6s ease-in-out forwards",
       "disappear-to-right": "disappear-to-right 0.6s ease-in forwards",
@@ -118,7 +120,7 @@ const config: Config = {
           width: "0",
         },
         "100%": {
-          width: "400px",
+          // width: "400px",
         },
       },
       "width-scale-down": {
@@ -127,6 +129,14 @@ const config: Config = {
         },
         "100%": {
           width: "0",
+        },
+      },
+      "height-scale-up": {
+        "0%": {
+          height: "0",
+        },
+        "100%": {
+          height: "90%",
         },
       },
       "appear-from-top": {

@@ -1,3 +1,4 @@
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { format, parse } from "date-fns";
 import type { GetMyGrassesQuery } from "graphql/generated/schema";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "ui/hover-card";
@@ -30,49 +31,56 @@ export const GrassViewer = async (props: Props) => {
   const { grasses } = props;
 
   return (
-    <div className="flex items-start gap-0.5">
-      {grasses.user?.contributionsCollection.contributionCalendar.weeks.map((week, idx) => {
-        if (idx === 0 && week.contributionDays.length < 7) return null;
-        return (
-          <div className="flex flex-col gap-0.5" key={`${week.contributionDays.toString()}-${idx}`}>
-            {week.contributionDays.map((day) => {
-              return (
-                <HoverCard key={day.date}>
-                  <HoverCardTrigger asChild>
-                    <span
-                      className="aspect-square w-[10px] rounded-[2px]"
-                      style={{
-                        backgroundColor: getTwBgColor(day.contributionCount),
-                      }}
-                    />
-                  </HoverCardTrigger>
-                  <HoverCardContent className="w-fit p-3">
-                    <div className="flex gap-2">
-                      <div
-                        className="h-[60px] w-2 rounded-sm"
-                        style={{
-                          backgroundColor: getTwBgColor(day.contributionCount),
-                        }}
-                      />
-                      <div className="flex flex-col">
-                        <p className="text-xs text-gray-600">
-                          {format(parse(day.date, "yyyy-MM-dd", new Date()), "yyyy/MM/dd")}
-                        </p>
-                        <p className="flex items-baseline gap-1">
-                          <span className="text-lg font-bold text-gray-700">
-                            {day.contributionCount}
-                          </span>
-                          <span className="text-xs text-gray-700">contributions</span>
-                        </p>
-                      </div>
-                    </div>
-                  </HoverCardContent>
-                </HoverCard>
-              );
-            })}
-          </div>
-        );
-      })}
-    </div>
+    <>
+      <ScrollArea type="scroll" className="w-full whitespace-nowrap">
+        <div className="flex w-max items-start gap-0.5">
+          {grasses.user?.contributionsCollection.contributionCalendar.weeks.map((week, idx) => {
+            if (idx === 0 && week.contributionDays.length < 7) return null;
+            return (
+              <div
+                className="flex shrink-0 flex-col gap-0.5"
+                key={`${week.contributionDays.toString()}-${idx}`}>
+                {week.contributionDays.map((day) => {
+                  return (
+                    <HoverCard key={day.date}>
+                      <HoverCardTrigger asChild>
+                        <span
+                          className="aspect-square w-[12px] shrink-0 rounded-[2px] md:w-[10px]"
+                          style={{
+                            backgroundColor: getTwBgColor(day.contributionCount),
+                          }}
+                        />
+                      </HoverCardTrigger>
+                      <HoverCardContent className="w-full p-3">
+                        <div className="flex gap-2">
+                          <div
+                            className="h-[60px] w-2 rounded-sm"
+                            style={{
+                              backgroundColor: getTwBgColor(day.contributionCount),
+                            }}
+                          />
+                          <div className="flex flex-col">
+                            <p className="text-xs text-gray-600">
+                              {format(parse(day.date, "yyyy-MM-dd", new Date()), "yyyy/MM/dd")}
+                            </p>
+                            <p className="flex items-baseline gap-1">
+                              <span className="text-lg font-bold text-gray-700">
+                                {day.contributionCount}
+                              </span>
+                              <span className="text-xs text-gray-700">contributions</span>
+                            </p>
+                          </div>
+                        </div>
+                      </HoverCardContent>
+                    </HoverCard>
+                  );
+                })}
+              </div>
+            );
+          })}
+        </div>
+        <ScrollBar orientation="horizontal" />
+      </ScrollArea>
+    </>
   );
 };
