@@ -1,4 +1,3 @@
-import { Hedvig_Letters_Sans } from "next/font/google";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -16,12 +15,12 @@ const config: Config = {
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontSize: {
-        lg: "var(--font-size-lg)",
-        md: "var(--font-size-md)",
-        sm: "var(--font-size-sm)",
-        xs: "var(--font-size-xs)",
-        xxs: "var(--font-size-xxs)",
-        xxxs: "var(--font-size-xxxs)",
+        // lg: "var(--font-size-lg)",
+        // md: "var(--font-size-md)",
+        // sm: "var(--font-size-sm)",
+        // xs: "var(--font-size-xs)",
+        // xxs: "var(--font-size-xxs)",
+        // xxxs: "var(--font-size-xxxs)",
       },
       borderRadius: {
         lg: "var(--radius)",

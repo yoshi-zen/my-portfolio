@@ -1,37 +1,11 @@
+import { historyList } from "features/top/history/_const/history-list";
 import { Fragment } from "react";
 import { FaClock } from "react-icons/fa";
 import { RxCursorArrow } from "react-icons/rx";
 
-const historyList = [
-  {
-    year: "20xx.xx-",
-    content: "今よりもっと、強くなる──",
-  },
-  {
-    year: "2024.11-",
-    content: "株式会社 Portus AI 委託開発",
-  },
-  {
-    year: "2023.10-",
-    content: "株式会社 ライトコード インターンシップ",
-  },
-  {
-    year: "2023.04",
-    content: "早稲田大学 情報理工学科 進学",
-  },
-  {
-    year: "2022.04",
-    content: "早稲田大学 基幹理工学部 入学",
-  },
-  {
-    year: "2019.12",
-    content: "ロボカップジュニア サッカーLW部門 関東ブロック 優勝",
-  },
-];
-
 export const HistoryPresentation = () => {
   return (
-    <div className="flex flex-col gap-3 rounded-md bg-white p-4 shadow-[0_0px_5px_0px_rgba(0,0,0,0.1)] md:p-2">
+    <div className="flex flex-col gap-3 rounded-md bg-white p-4 shadow-[0_0px_5px_0px_rgba(0,0,0,0.1)] md:px-2">
       <div className="flex items-center gap-2">
         <FaClock className="h-4 w-4 text-gray-400" />
         <p className="text-xs text-gray-400">My Short CV</p>
