@@ -20,14 +20,12 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "components/*": ["./src/components/*"]
+      "frames/*": ["./src/components/frames/*"],
+      "ui/*": ["./src/components/ui/*"],
+      "features/*": ["./src/features/*"],
+      "graphql/*": ["./src/graphql/*"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }
